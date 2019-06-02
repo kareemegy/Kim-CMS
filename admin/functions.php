@@ -1,6 +1,15 @@
 <?php
 
-//insert_categories
+function confirm_query($result)
+{
+    global $conn;
+    if (!$result) {
+        die("QUERY FAILED " . mysqli_error($conn));
+    }
+
+}
+
+// insert_categories
 function insert_categories()
 {
     global $conn;
@@ -20,7 +29,7 @@ function insert_categories()
     }
 };
 
-//Read/Find all categories
+// Read/Find all categories
 function find_all_categories()
 {
     global $conn;

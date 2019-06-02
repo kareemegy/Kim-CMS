@@ -39,14 +39,14 @@
                                 <a href="./posts.php">View All Posts</a>
                             </li>
                             <li>
-                                <a href="#">Add Posts</a>
+                                <a href="./posts.php?source=add_post">Add Posts</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="./categories.php"><i class="fa fa-fw fa-desktop"></i> Categories</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="blank-page.html"><i class="fa fa-fw fa-file"></i>Comments</a>
                     </li>
 
