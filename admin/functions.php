@@ -1,5 +1,5 @@
 <?php
-
+// test qurys
 function confirm_query($result)
 {
     global $conn;

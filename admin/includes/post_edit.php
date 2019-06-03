@@ -32,24 +32,29 @@ if (isset($_POST['update_post'])) {
 
     move_uploaded_file($post_image_temp, "../images/$post_image");
 
+    if (empty($post_image)) {
+        $query = "SELECT * FROM posts WHERE post_id = $the_post_id ";
+        $select_image = mysqli_query($conn, $query);
+        while ($row = mysqli_fetch_assoc($select_image)) {
+            $post_image = $row['post_image'];
+        }
+    }
+    
     $query = "UPDATE posts SET post_author = '$post_author', post_title = '$post_title' ,post_category_id = '$post_category_id',
     post_status = '$post_status' , post_image = '$post_image' , post_tags = '$post_tags',
     post_comment_count = $post_comments_count , post_date = now() , post_content = '$post_content' WHERE post_id=$the_post_id";
 
-    // $edit_post = mysqli_query($conn, $query);
-    // confirm_query($edit_post);
+    $edit_post = mysqli_query($conn, $query);
+    confirm_query($edit_post);
 }
-
 ?>
 
 
 <form action="" method="post" enctype="multipart/form-data">
-
 <div class="form-group">
     <labal for="title">Post Title</labal>
     <input  type="text" class="form-control" name="post_title" value="<?php echo $post_title ?>">
 </div>
-
 
 <div class="form-group">
     <select name="post_category" id="">
@@ -78,6 +83,7 @@ while ($row = mysqli_fetch_assoc($select_categories)) {
 
 <div class="form-group">
     <img width="100px" src="../images/<?php echo $post_image; ?>" alt="image" name = "post_image">
+    <input type="file" name="image">
 </div>
 
 <div class="form-group">
