@@ -15,7 +15,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Start Now</a>
+          <a class="navbar-brand" href="./index.php">HOME </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

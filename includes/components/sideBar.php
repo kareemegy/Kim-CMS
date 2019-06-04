@@ -30,11 +30,11 @@ $select_categories_sideBar = mysqli_query($conn, $query);
 <?php
 while ($row = mysqli_fetch_assoc($select_categories_sideBar)) {
     $cat_title = $row['cat_title'];
-    echo "<li id = 'js'><a href='#'>{$cat_title}</a></li>";
+    $cat_id = $row['cat_id'];
+    echo "<li><a href='category.php?category=$cat_id'>{$cat_title}</a></li>";
 }
 
 ?>
-
               </ul>
             </div>
 

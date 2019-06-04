@@ -10,7 +10,7 @@
                                     <th>Tags</th>
                                     <th>Comments</th>
                                     <th>Date</th>
-                                    <th>Content</th>
+                                    <!-- <th>Content</th> -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -27,7 +27,7 @@ while ($row = mysqli_fetch_assoc($select_posts)) {
     $post_tags = $row['post_tags'];
     $post_comments_count = $row['post_comment_count'];
     $post_date = $row['post_date'];
-    $post_content = $row['post_content'];
+    // $post_content = $row['post_content'];
 
     echo "<tr>";
     echo "<td>$post_id</td>";
@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_assoc($select_posts)) {
     echo "<td>$post_tags</td>";
     echo "<td>$post_comments_count</td>";
     echo "<td>$post_date</td>";
-    echo "<td>$post_content</td>";
+    // echo "<td>$post_content</td>";
     echo "<td><a href='posts.php?source=edit_post&p_id={$post_id}'>EDIT</a></td>";
     echo "<td><a href='posts.php?delete={$post_id}'>DELETE</a></td>";
     echo "</tr>";

@@ -16,17 +16,25 @@
         <div class="col-md-8">
 
         <?php
-$query = "SELECT * FROM  posts";
+
+if (isset($_GET['category'])) {
+    $the_cat_id = $_GET['category'];
+}
+
+$query = "SELECT * FROM  posts WHERE post_category_id = $the_cat_id ";
 $select_all_posts_query = mysqli_query($conn, $query);
 
-while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
-    $post_id = $row['post_id'];
-    $post_title = $row['post_title'];
-    $post_author = $row['post_author'];
-    $post_date = $row['post_date'];
-    $post_image = $row['post_image'];
-    $post_content = substr($row['post_content'], 0, 100);
-    ?>
+if (empty(mysqli_num_rows($select_all_posts_query))) {
+    echo "<h1> No Post Here";
+} else {
+    while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
+        $post_id = $row['post_id'];
+        $post_title = $row['post_title'];
+        $post_author = $row['post_author'];
+        $post_date = $row['post_date'];
+        $post_image = $row['post_image'];
+        $post_content = substr($row['post_content'], 0, 100);
+        ?>
 
         <h1 class="page-header">
           Page Heading
@@ -59,7 +67,10 @@ while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
         <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
 
         <hr/>
-<?php }?>
+<?php
+}
+}
+?>
 
         </div>
 
