@@ -25,7 +25,7 @@ $query = "SELECT * FROM  posts WHERE post_category_id = $the_cat_id ";
 $select_all_posts_query = mysqli_query($conn, $query);
 
 if (empty(mysqli_num_rows($select_all_posts_query))) {
-    echo "<h1> No Post Here";
+    echo "<h1> No Posts Here</h1>";
 } else {
     while ($row = mysqli_fetch_assoc($select_all_posts_query)) {
         $post_id = $row['post_id'];
