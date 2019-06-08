@@ -33,13 +33,6 @@ while ($row = mysqli_fetch_assoc($select_comments)) {
     echo "<td>$comment_id</td>";
     echo "<td>$comment_author</td>";
     echo "<td>$comment_content</td>";
-    // $query = "SELECT * FROM categories WHERE cat_id = {$post_category_id}";
-    // $select_category_id = mysqli_query($conn, $query);
-    // while ($row = mysqli_fetch_assoc($select_category_id)) {
-    //     $cat_id = $row['cat_id'];
-    //     $cat_title = $row['cat_title'];
-    //     echo "<td>{$cat_title}</td>";
-    // }
     echo "<td>$comment_email </td>";
     echo "<td>$comment_status </td>";
 

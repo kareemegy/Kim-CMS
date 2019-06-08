@@ -58,7 +58,7 @@ if (isset($_POST['update_post'])) {
 
 <div class="form-group">
     <select name="post_category" id="">
-    <?php
+<?php
 $query = "SELECT * FROM categories";
 $select_categories = mysqli_query($conn, $query);
 confirm_query($select_categories);

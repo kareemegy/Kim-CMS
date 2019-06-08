@@ -1,6 +1,4 @@
 <?php include "includes/database/db.php"?>
-
-
 <!-- Header and Body -->
 <?php include "includes/components/header.php"?>
 
