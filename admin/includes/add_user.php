@@ -15,7 +15,7 @@ if (isset($_POST['create_user'])) {
 
     $create_user_query = mysqli_query($conn, $query);
 
-    confirm_query($create_user_query);
+    confirm_query($create_user_query);  
 }
 ?>
 

@@ -6,7 +6,7 @@ if (isset($_GET['p_id'])) {
 
 $query = "SELECT * FROM users WHERE user_id = $the_user_id";
 $select_user_by_id = mysqli_query($conn, $query);
-
+confirm_query($select_user_by_id);
 while ($row = mysqli_fetch_assoc($select_user_by_id)) {
     $user_firstname = $row['user_firstname'];
     $user_lastname = $row['user_lastname'];
@@ -24,10 +24,10 @@ if (isset($_POST['update_user'])) {
     $user_name = $_POST['user_name'];
     $user_password = $_POST['user_password'];
     $user_email = $_POST['user_email'];
-    $user_role = $_POST['user_role'];
+    // $user_role = $_POST['user_role'];
 
     $query = "UPDATE users SET user_firstname = '$user_firstname', user_lastname = '$user_lastname' ,user_name = '$user_name',
-    user_password = '$user_password' , user_email = '$user_email' , user_role = '$user_role' WHERE user_id = $the_user_id ";
+    user_password = '$user_password' , user_email = '$user_email'  WHERE user_id = $the_user_id "; // , user_role = '$user_role'
 
     $edit_post = mysqli_query($conn, $query);
     confirm_query($edit_post);
@@ -44,25 +44,24 @@ if (isset($_POST['update_user'])) {
 
 <div class="form-group">
     <labal for="title">user_lastname  </labal>
-    <input type="text" class="form-control" name="user_lastname" value = '<?php echo $user_lastname ?>'>
+    <input type="text" class="form-control" name="user_lastname" value = "<?php echo $user_lastname ?>">
 </div>
 
-<div class="form-group">
+<!-- select admin or subscriber -->
+<!-- <div class="form-group">
    <select name="user_role" id="">
+    <option value=' <?php echo $user_role ?> '> <?php echo $user_role ?></option> -->
+
 <?php
-$query = "SELECT * FROM users";
-$select_user_role = mysqli_query($conn, $query);
-
-while ($row = mysqli_fetch_assoc($select_user_role)) {
-    $user_id = $row['user_id'];
-    $user_role = $row['user_role'];
-
-    echo "<option value='$user_role'> $user_role </option>";
-}
-
+// if ($user_role == 'admin') {
+//     echo "<option value='admin'> admin </option>";
+// } else {
+//     echo "<option value='subscriber'> subscriber </option>";
+// }
 ?>
-   </sel    ect>
-</div>
+
+   <!-- </select>
+</div> -->
 <!-- <div class="form-group">
     <labal for="post_image">Post Image</labal>
     <input type="file" name="image">
