@@ -1,5 +1,6 @@
  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -61,11 +62,10 @@
                             </li>
                         </ul>
                     </li>
+
                      <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Profile</a>
+                        <a href="./profile.php"><i class="fa fa-fw fa-desktop"></i>Profile</a>
                     </li>
-
-
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

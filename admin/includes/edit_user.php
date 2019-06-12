@@ -48,6 +48,7 @@ if (isset($_POST['update_user'])) {
 </div>
 
 <!-- select admin or subscriber -->
+
 <!-- <div class="form-group">
    <select name="user_role" id="">
     <option value=' <?php echo $user_role ?> '> <?php echo $user_role ?></option> -->
