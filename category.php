@@ -5,6 +5,7 @@
 <?php include "includes/components/header.php"?>
 
     <!-- Navigation -->
+    
     <?php include "includes/components/navigation.php"?>
 
     <!-- Page Content -->
