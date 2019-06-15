@@ -7,6 +7,7 @@
     <!-- Navigation -->
     
     <?php include "includes/components/navigation.php"?>
+    
 
     <!-- Page Content -->
     <div class="container">
