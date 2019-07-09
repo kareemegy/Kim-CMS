@@ -18,7 +18,6 @@
                 </div>
                 <!-- /.row -->
  <!-- /.row -->
-
 <div class="row">
   <div class="col-lg-3 col-md-6">
     <div class="panel panel-primary">
@@ -28,7 +27,6 @@
             <i class="fa fa-file-text fa-5x"></i>
           </div>
           <div class="col-xs-9 text-right">
-
 <?php
 // Post Count
 $query = "SELECT * FROM posts ";
@@ -149,17 +147,19 @@ echo "<div class='huge'>$categories_count</div>"
 </div>
 <!-- /.row -->
 <?php
-
+// select post_draft
 $query = "SELECT * FROM posts WHERE post_status =  'draft' ";
 $select_all_draft_post = mysqli_query($conn, $query);
 confirm_query($select_all_draft_post);
 $post_draft_count = mysqli_num_rows($select_all_draft_post);
 
+// select unapproved
 $query = "SELECT * FROM comments WHERE comment_status =  'unapproved' ";
 $unapproved_comments = mysqli_query($conn, $query);
 confirm_query($unapproved_comments);
 $unapproved_comments_count = mysqli_num_rows($unapproved_comments);
 
+// select subscriber users
 $query = "SELECT * FROM users WHERE user_role =  'subscriber' ";
 $select_all_subscriber = mysqli_query($conn, $query);
 confirm_query($select_all_subscriber);
@@ -177,7 +177,7 @@ function drawChart() {
   var data = google.visualization.arrayToDataTable([
     ["Date", "Count"],
 <?php
-$elements_text = ['Active Posts', "Draft Post", "Comments", "Pending Comments", "Users","Subscriber ", "Categories"];
+$elements_text = ['Active Posts', "Draft Post", "Comments", "Pending Comments", "Users", "Subscriber ", "Categories"];
 $elements_count = [$post_count, $post_draft_count, $categories_count, $unapproved_comments_count, $users_count, $subscriber_count, $comments_count];
 for ($i = 0; $i < 7; $i++) {
     echo " ['{$elements_text[$i]}' " . " ," . "{$elements_count[$i]}],";
